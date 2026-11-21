@@ -20,8 +20,19 @@ img{width:100%;height:auto;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,
 a.go{display:block;width:100%;box-sizing:border-box;text-align:center;padding:18px;border-radius:14px;background:#6fe3c8;color:#071113;font-size:20px;font-weight:700;text-decoration:none}
 a.es{color:#ffd2b0;font-size:17px}
 a:focus-visible{outline:3px solid #ffd2b0;outline-offset:3px}
+button.go{border:0;cursor:pointer;font:inherit;font-size:20px;font-weight:700;background:#ff8a65;color:#071113}
+.note{margin:0;min-height:1.2em;color:#6fe3c8;font-size:15px}
+.alt{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.alt a{color:#b9cbc6;font-size:16px}
+button:focus-visible{outline:3px solid #ffd2b0;outline-offset:3px}
 </style></head><body><main>
 <img src="stark.png" width="1080" height="1350" alt="Stark: Apex Protocol is our flagship program, in development. Live today: Covenant, Warden, Trades, Math, Classroom Hub, IntraTheater, Quill, Ledger, Family Vault, Career, Builder, Event Kit, World Engine, Studio Creator, the Stark App and the School Licence.">
+<button class="go share" id="share" type="button">Share Stark</button>
+<p class="note" id="shareMsg" role="status" aria-live="polite"></p>
+<div class="alt"><a id="wa" href="https://wa.me/?text=Stark%20%E2%80%94%20Creation%20cultivated.%20Creator%20revered.%20https%3A%2F%2Fstarkforall.com%2Fshare%2F">WhatsApp</a><a id="sms" href="sms:?&body=Stark%20%E2%80%94%20Creation%20cultivated.%20Creator%20revered.%20https%3A%2F%2Fstarkforall.com%2Fshare%2F">Text message</a></div>
 <a class="go" href="https://starkforall.com/">Explore Stark at starkforall.com</a>
 <a class="es" href="https://starkforall.com/es/">Ver en español</a>
-</main></body></html>
+</main><script>
+(function(){var url='https://starkforall.com/share/',text='Stark: Creation cultivated. Creator revered.',b=document.getElementById('share'),m=document.getElementById('shareMsg');
+b.addEventListener('click',function(){if(navigator.share){navigator.share({title:'Stark',text:text,url:url}).catch(function(){});return}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){m.textContent='Link copied. Paste it anywhere.'},function(){m.textContent=url})}else{m.textContent=url}});})();
+</script></body></html>
